@@ -4,8 +4,6 @@ type User {
   username: String! @unique
   email: String! @unique
   bio: String
-  followers: [User!]! @relation(name: "FollowRelation")
-  following: [User!]! @relation(name: "FollowRelation")
   posts: [Post!]! @relation(name:"PostsOfUser", onDelete: CASCADE)
   likes: [Like!]! @relation(name:"LikesOfUser", onDelete: CASCADE)
   comments: [Comment!]! @relation(name:"CommentsOfUser", onDelete: CASCADE)
