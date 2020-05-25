@@ -7,7 +7,16 @@ import {authenticateJwt} from "./passport";
 import {checkIfAuthenticated} from "./middleware";
 
 const PORT = process.env.PORT || 4000;
-
+const typeDefs = `
+    type Query{
+        hello: String!
+    }
+`;
+const resolvers = {
+  Query: {
+    hello: () => "Hi",
+  },
+};
 const server = new GraphQLServer({
   schema,
   context: ({request}) => ({request, checkIfAuthenticated}),

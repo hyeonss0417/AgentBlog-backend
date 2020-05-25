@@ -26,6 +26,9 @@ export default {
         .aggregate()
         .count();
     },
+    hashtags: (parent, _) => {
+      return prisma.post({id: parent.id}).hashtags();
+    },
     files: (parent, _) => {
       return prisma.post({id: parent.id}).files();
     },
