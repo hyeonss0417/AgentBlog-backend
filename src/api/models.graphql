@@ -10,6 +10,9 @@ type User {
   loginSecret: String
   createdAt: String!
   updatedAt: String!
+
+  isSelf: Boolean!
+  postsCount: Int!
 }
 
 type Post {
@@ -24,6 +27,10 @@ type Post {
   comments: [Comment!]!
   createdAt: String!
   updatedAt: String!
+
+  isLiked: Boolean!
+  likeCount: Int!
+  commentCount: Int!
 }
 
 type Like {

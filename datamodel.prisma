@@ -17,7 +17,7 @@ type Post {
   user: User! @relation(name:"PostsOfUser")
   title: String!
   content: String!
-  hashtags: [Hashtag!]! @relation(name:"HashtagsOfPost")
+  hashtags: [Hashtag!]! @relation(name:"HashtagsOfPost", onDelete: SET_NULL)
   series: Series @relation(name:"SeriesOfPost")
   files: [File!]! @relation(name: "FilesOfPost", onDelete: CASCADE)
   likes: [Like!]! @relation(name: "LikesOfPost", onDelete: CASCADE)
@@ -53,9 +53,9 @@ type File {
 
 type Hashtag {
     id: ID! @id
-    name: String!
+    name: String! @unique
     explanation: String
-    posts: [Post!]! @relation(name:"HashtagsOfPost")
+    posts: [Post!]! @relation(name:"HashtagsOfPost", onDelete: SET_NULL)
     createdAt: DateTime! @createdAt
     updatedAt: DateTime! @updatedAt
 }

@@ -1,0 +1,8 @@
+type Mutation {
+  posting(
+    title: String!
+    hashtags: [String!]!
+    content: String!
+    files: [String!]!
+  ): Post!
+}
