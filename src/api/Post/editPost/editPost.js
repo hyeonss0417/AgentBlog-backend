@@ -8,7 +8,7 @@ export default {
   Mutation: {
     editPost: async (_, args, {request, checkIfAuthenticated}) => {
       checkIfAuthenticated(request);
-      const {id, title, hashtags, content, files, action} = args;
+      const {id, title, hashtags, content, series_title, files, action} = args;
       const {user} = request;
 
       const post = await prisma.$exists.post({id, user: {id: user.id}});
@@ -26,6 +26,11 @@ export default {
             data: {
               title,
               content,
+              series: {
+                update: {
+                  title: series_title,
+                },
+              },
               hashtags: {
                 disconnect: removedHashtags.map((name) => {
                   return {name: name};

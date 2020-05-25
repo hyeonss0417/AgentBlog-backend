@@ -3,6 +3,7 @@ type Mutation {
     title: String!
     hashtags: [String!]!
     content: String!
+    series_title: String
     files: [String!]!
   ): Post!
 }

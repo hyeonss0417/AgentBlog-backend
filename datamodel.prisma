@@ -62,9 +62,9 @@ type Hashtag {
 
 type Series {
     id: ID! @id
-    user: User!
-    title: String!
-    image: File!
+    user:    User!
+    title:   String!
+    image:   File
     posts: [Post!]! @relation(name:"SeriesOfPost")
     createdAt: DateTime! @createdAt
     updatedAt: DateTime! @updatedAt

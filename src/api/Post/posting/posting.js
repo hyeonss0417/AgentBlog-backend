@@ -5,13 +5,18 @@ export default {
   Mutation: {
     posting: async (_, args, {request, checkIfAuthenticated}) => {
       checkIfAuthenticated(request);
-      const {title, hashtags, content, files} = args;
+      const {title, hashtags, content, series_title, files} = args;
       const {user} = request;
       const post = await prisma.createPost({
         title,
         user: {
           connect: {
             id: user.id,
+          },
+        },
+        series: {
+          connect: {
+            id: series_title,
           },
         },
         content,

@@ -70,7 +70,7 @@ type Hashtag {
 type Series {
   id: ID!
   user: User!
-  title: String!
+  title: String
   image: File!
   posts: [Post!]!
   createdAt: String!

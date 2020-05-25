@@ -1,0 +1,72 @@
+model User {
+  id ID @id
+  avatar String?
+  username String @unique
+  email String @unique
+  bio String?
+  posts Post[] @relation(name:"PostsOfUser", onDelete: CASCADE)
+  likes Like[] @relation(name:"LikesOfUser", onDelete :CASCADE)
+  comments Comment[] @relation(name:"CommentsOfUser", onDelete :CASCADE)
+  loginSecret String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Post {
+  id ID @id
+  user User @relation(name:"PostsOfUser")
+  title String
+  content String
+  hashtags Hashtag[] @relation(name:"HashtagsOfPost", onDelete :SET_NULL)
+  series Series? @relation(name:"SeriesOfPost")
+  files File[] @relation(name :"FilesOfPost", onDelete: CASCADE)
+  likes Like[] @relation(name :"LikesOfPost", onDelete :CASCADE)
+  comments Comment[] @relation(name :"CommentsOfPost", onDelete :CASCADE)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Like {
+  id ID @id
+  user User @relation(name:"LikesOfUser")
+  post Post @relation(name :"LikesOfPost")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Comment {
+  id ID @id
+  text String
+  user User @relation(name:"CommentsOfUser")
+  post Post @relation(name :"CommentsOfPost")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model File {
+  id ID @id
+  url String
+  post Post @relation(name: "FilesOfPost")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Hashtag {
+    id String @id
+    name String @unique
+    explanation String?
+    posts Post[] @relation(name:"HashtagsOfPost", onDelete: SET_NULL)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model Series {
+    id      String @id
+    user    User
+    title   String
+    image   File?
+    posts   Post[] @relation(name:"SeriesOfPost")
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    @@unique([user, title])
+}
