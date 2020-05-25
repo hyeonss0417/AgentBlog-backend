@@ -1,0 +1,26 @@
+{
+  "name": "AgentBlog-backend",
+  "version": "1.0.0",
+  "description": "Blog Server [ Express + Prisma + React and React Native ]",
+  "main": "index.js",
+  "repository": "https://github.com/skyoun97/AgentBlog-backend.git",
+  "author": "전현성 <skyoun97@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "babel-node": "^0.0.1-security",
+    "graphql-tools": "^6.0.0",
+    "graphql-yoga": "^1.18.3",
+    "merge-graphql-schemas": "^1.7.8",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js"
+  }
+}
