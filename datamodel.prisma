@@ -2,6 +2,7 @@ type User {
   id: ID! @id
   avatar: String
   username: String! @unique
+  blogname: String! @default(value: "Agent.log")
   email: String! @unique
   bio: String
   posts: [Post!]! @relation(name:"PostsOfUser", onDelete: CASCADE)

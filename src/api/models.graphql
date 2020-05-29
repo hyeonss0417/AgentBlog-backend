@@ -2,6 +2,7 @@ type User {
   id: ID!
   avatar: String
   username: String!
+  blogname: String!
   email: String!
   bio: String
   posts: [Post!]!
