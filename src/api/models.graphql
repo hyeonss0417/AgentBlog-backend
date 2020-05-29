@@ -20,6 +20,7 @@ type Post {
   id: ID!
   user: User!
   title: String!
+  url: String!
   content: String!
   hashtags: [Hashtag!]!
   series: Series
