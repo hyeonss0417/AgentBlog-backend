@@ -4,6 +4,6 @@ type Mutation {
     hashtags: [String!]!
     content: String!
     series_title: String
-    files: [String!]!
+    files: [String!]
   ): Post!
 }
