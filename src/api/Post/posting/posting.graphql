@@ -1,7 +1,7 @@
 type Mutation {
   posting(
     title: String!
-    hashtags: [String!]!
+    hashtags: [String!]
     content: String!
     series_title: String
     files: [String!]
