@@ -6,9 +6,12 @@
   "author": "전현성 <skyoun97@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@babel/cli": "^7.10.1",
     "@babel/core": "^7.9.6",
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.6",
+    "@babel/runtime": "^7.10.1",
+    "copy": "^0.3.2",
     "dotenv": "^8.2.0",
     "graphql-tools": "^4.0.7",
     "graphql-yoga": "^1.18.3",
@@ -22,12 +25,17 @@
     "prisma-client-lib": "^1.34.10"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.10.1",
     "nodemon": "^2.0.4"
   },
   "scripts": {
     "deploy": "prisma deploy",
     "generate": "prisma generate",
     "prisma": "yarn run deploy && yarn run generate",
-    "dev": "nodemon --exec babel-node src/server.js"
+    "dev": "nodemon --exec babel-node src/server.js",
+    "build": "babel src -d build",
+    "prebuild": "yarn run prisma",
+    "postbuild": "cd src && copy ./api/**/*.graphql ../build/api/ && cd ..",
+    "start": "node build/server.js"
   }
 }
