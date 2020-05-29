@@ -17,7 +17,7 @@ type Post {
   id: ID! @id
   user: User! @relation(name:"PostsOfUser")
   title: String!
-  url: String! @default(value: "url")
+  url: String!
   content: String!
   hashtags: [Hashtag!]! @relation(name:"HashtagsOfPost", onDelete: SET_NULL)
   series: Series @relation(name:"SeriesOfPost")
