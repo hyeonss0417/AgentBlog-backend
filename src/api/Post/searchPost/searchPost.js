@@ -12,7 +12,7 @@ export default {
           OR: [
             {title_contains: term},
             {content_contains: term},
-            {hashtags_some: {name_contains: term}},
+            {hashtags_some: {name_contains: args.term}},
           ],
         },
       });

@@ -14,13 +14,11 @@ export default {
             id: user.id,
           },
         },
-        series: series_title
-          ? {
-              connect: {
-                id: series_title,
-              },
-            }
-          : {},
+        series: {
+          connect: {
+            id: series_title,
+          },
+        },
         content,
       });
 
