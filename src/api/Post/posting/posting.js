@@ -7,7 +7,7 @@ export default {
       checkIfAuthenticated(request);
       const {title, url, hashtags, content, series_title, files} = args;
       const {user} = request;
-      const post = await prisma.createPost({
+      let createPostOption = {
         title,
         user: {
           connect: {
@@ -15,15 +15,17 @@ export default {
           },
         },
         url,
-        series: {
-          connect: series_title
-            ? {
-                id: series_title,
-              }
-            : {},
-        },
         content,
-      });
+      };
+      if (series_title) {
+        createPostOption.series = {
+          connect: {
+            id: series_title,
+          },
+        };
+      }
+
+      const post = await prisma.createPost(createPostOption);
 
       AddHashtag(post.id, hashtags);
 
