@@ -10,18 +10,7 @@ export default {
       checkIfAuthenticated(request);
       const {id, title, hashtags, content, series_title, files, action} = args;
       const {user} = request;
-
-      let {url} = args;
-      let existingPost = true;
-      while (existingPost) {
-        existingPost = await prisma.$exists.post({
-          user: {username: user.username},
-          url,
-        });
-        if (existingPost) {
-          url = args.url + generateSecret();
-        }
-      }
+      const url = GetUniqueUrl(user.username, args.url);
 
       const post = await prisma.$exists.post({id, user: {id: user.id}});
 
@@ -33,6 +22,7 @@ export default {
           const removedHashtags = existingHashtags.filter(
             (name) => !hashtags.includes(name)
           );
+
           await prisma.updatePost({
             where: {id},
             data: {

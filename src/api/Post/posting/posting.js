@@ -1,5 +1,6 @@
 import {prisma} from "../../../../generated/prisma-client";
 import AddHashtag from "../../../AddHashtag";
+import {GetUniqueUrl} from "../../../GetUniqueUrl";
 
 export default {
   Mutation: {
@@ -7,18 +8,7 @@ export default {
       checkIfAuthenticated(request);
       const {title, hashtags, content, series_title, files} = args;
       const {user} = request;
-      let {url} = args;
-
-      let existingPost = true;
-      while (existingPost) {
-        existingPost = await prisma.$exists.post({
-          user: {username: user.username},
-          url,
-        });
-        if (existingPost) {
-          url = args.url + generateSecret();
-        }
-      }
+      const url = GetUniqueUrl(user.username, args.url);
 
       let createPostOption = {
         title,
