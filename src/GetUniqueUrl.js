@@ -1,4 +1,5 @@
 import {generateSecret} from "./utils";
+import {prisma} from "../generated/prisma-client";
 
 export const GetUniqueUrl = async (username, url) => {
   let uniqueUrl = url;
@@ -10,7 +11,7 @@ export const GetUniqueUrl = async (username, url) => {
       url: uniqueUrl,
     });
     if (existingPost) {
-      uniqueUrl = url + generateSecret();
+      uniqueUrl = url + "-" + generateSecret().toLowerCase();
     }
   }
   return uniqueUrl;

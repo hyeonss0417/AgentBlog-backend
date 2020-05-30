@@ -8,8 +8,7 @@ export default {
       checkIfAuthenticated(request);
       const {title, hashtags, content, series_title, files} = args;
       const {user} = request;
-      const url = GetUniqueUrl(user.username, args.url);
-
+      const url = await GetUniqueUrl(user.username, args.url);
       let createPostOption = {
         title,
         user: {
