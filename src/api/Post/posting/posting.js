@@ -27,18 +27,22 @@ export default {
 
       const post = await prisma.createPost(createPostOption);
 
-      AddHashtag(post.id, hashtags);
+      if (hashtags) {
+        AddHashtag(post.id, hashtags);
+      }
 
-      files.forEach(async (file) => {
-        await prisma.createFile({
-          url: file,
-          post: {
-            connect: {
-              id: post.id,
+      if (files) {
+        files.forEach(async (file) => {
+          await prisma.createFile({
+            url: file,
+            post: {
+              connect: {
+                id: post.id,
+              },
             },
-          },
+          });
         });
-      });
+      }
       return post;
     },
   },
