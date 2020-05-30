@@ -1,17 +1,17 @@
-import { generateSecret } from "./utils";
+import {generateSecret} from "./utils";
 
-export const GetUniqueUrl = (username, url) => {
-    let uniqueUrl = url;
+export const GetUniqueUrl = async (username, url) => {
+  let uniqueUrl = url;
 
-    let existingPost = true;
-    while (existingPost) {
-      existingPost = await prisma.$exists.post({
-        user: {username},
-        url:uniqueUrl,
-      });
-      if (existingPost) {
-        uniqueUrl = url + generateSecret();
-      }
+  let existingPost = true;
+  while (existingPost) {
+    existingPost = await prisma.$exists.post({
+      user: {username},
+      url: uniqueUrl,
+    });
+    if (existingPost) {
+      uniqueUrl = url + generateSecret();
     }
-    return uniqueUrl;
-}
+  }
+  return uniqueUrl;
+};

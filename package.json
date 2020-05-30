@@ -37,6 +37,7 @@
     "build": "babel src -d build",
     "prebuild": "yarn run generate",
     "postbuild": "cd src && copy ./api/**/*.graphql ../build/api/ && cd ..",
-    "start": "node build/server.js"
+    "start": "node build/server.js",
+    "git": "git push origin master && git push heroku master"
   }
 }
