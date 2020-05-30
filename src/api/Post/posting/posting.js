@@ -10,11 +10,10 @@ export default {
       let {url} = args;
 
       let existingPost = true;
-
       while (existingPost) {
         existingPost = await prisma.$exists.posts({
           where: {
-            username,
+            username: user.username,
             url,
           },
         });
