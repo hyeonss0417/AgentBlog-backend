@@ -10,9 +10,12 @@ export default {
       return await prisma.posts({
         where: {
           OR: [
+            {title_contains: args.term},
             {title_contains: term},
+            {content_contains: args.term},
             {content_contains: term},
             {hashtags_some: {name_contains: args.term}},
+            {hashtags_some: {name_contains: term}},
           ],
         },
       });
