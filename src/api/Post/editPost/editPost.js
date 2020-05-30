@@ -10,7 +10,7 @@ export default {
       checkIfAuthenticated(request);
       const {id, title, hashtags, content, series_title, files, action} = args;
       const {user} = request;
-      const url = GetUniqueUrl(user.username, args.url);
+      const url = await GetUniqueUrl(user.username, args.url);
 
       const post = await prisma.$exists.post({id, user: {id: user.id}});
 
