@@ -8,17 +8,22 @@ export default {
   Mutation: {
     editPost: async (_, args, {request, checkIfAuthenticated}) => {
       checkIfAuthenticated(request);
-      const {
-        id,
-        url,
-        title,
-        hashtags,
-        content,
-        series_title,
-        files,
-        action,
-      } = args;
+      const {id, title, hashtags, content, series_title, files, action} = args;
       const {user} = request;
+
+      let {url} = args;
+      let existingPost = true;
+      while (existingPost) {
+        existingPost = await prisma.$exists.posts({
+          where: {
+            username,
+            url,
+          },
+        });
+        if (existingPost) {
+          url = args.url + generateSecret();
+        }
+      }
 
       const post = await prisma.$exists.post({id, user: {id: user.id}});
 

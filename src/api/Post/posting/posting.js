@@ -5,8 +5,24 @@ export default {
   Mutation: {
     posting: async (_, args, {request, checkIfAuthenticated}) => {
       checkIfAuthenticated(request);
-      const {title, url, hashtags, content, series_title, files} = args;
+      const {title, hashtags, content, series_title, files} = args;
       const {user} = request;
+      let {url} = args;
+
+      let existingPost = true;
+
+      while (existingPost) {
+        existingPost = await prisma.$exists.posts({
+          where: {
+            username,
+            url,
+          },
+        });
+        if (existingPost) {
+          url = args.url + generateSecret();
+        }
+      }
+
       let createPostOption = {
         title,
         user: {
