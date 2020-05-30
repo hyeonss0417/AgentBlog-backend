@@ -15,10 +15,8 @@ export default {
       let existingPost = true;
       while (existingPost) {
         existingPost = await prisma.$exists.post({
-          where: {
-            username: user.username,
-            url,
-          },
+          user: {username: user.username},
+          url,
         });
         if (existingPost) {
           url = args.url + generateSecret();

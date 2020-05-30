@@ -6,7 +6,7 @@ export default {
       const {username, url} = args;
       const post = await prisma.posts({
         where: {
-          username,
+          user: {username},
           url,
         },
       });
