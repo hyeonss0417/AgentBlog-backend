@@ -60,6 +60,7 @@ type Hashtag {
     posts: [Post!]! @relation(name:"HashtagsOfPost", onDelete: SET_NULL)
     createdAt: DateTime! @createdAt
     updatedAt: DateTime! @updatedAt
+    postsCount: Int! @default(value: 0)
 }
 
 type Series {

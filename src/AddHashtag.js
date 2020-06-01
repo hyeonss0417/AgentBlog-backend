@@ -3,7 +3,7 @@ import {prisma} from "../generated/prisma-client";
 const AddHashtag = (postId, hashtags) => {
   hashtags.forEach(async (hashtag) => {
     try {
-      const existingHashtag = await prisma.$exists.hashtag({name: hashtag});
+      const existingHashtag = await prisma.hashtag({name: hashtag});
 
       if (existingHashtag) {
         await prisma.updateHashtag({
@@ -14,6 +14,7 @@ const AddHashtag = (postId, hashtags) => {
                 id: postId,
               },
             },
+            postsCount: existingHashtag.postsCount + 1,
           },
         });
       } else {
@@ -24,6 +25,7 @@ const AddHashtag = (postId, hashtags) => {
               id: postId,
             },
           },
+          postsCount: 0,
         });
       }
       return true;
