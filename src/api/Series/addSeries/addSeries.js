@@ -14,11 +14,10 @@ export default {
       if (existSeries) {
         return false;
       } else {
-        await prisma.createSeries({
+        return prisma.createSeries({
           title,
           user: {connect: {id: user.id}},
         });
-        return true;
       }
     },
   },

@@ -1,0 +1,3 @@
+type Query {
+  getSeries(username: String): [Series!]
+}

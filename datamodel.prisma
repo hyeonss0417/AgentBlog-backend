@@ -21,6 +21,7 @@ type Post {
   content: String!
   hashtags: [Hashtag!]! @relation(name:"HashtagsOfPost", onDelete: SET_NULL)
   series: Series @relation(name:"SeriesOfPost")
+  thumbnail: String
   files: [File!]! @relation(name: "FilesOfPost", onDelete: CASCADE)
   likes: [Like!]! @relation(name: "LikesOfPost", onDelete: CASCADE)
   comments: [Comment!]! @relation(name: "CommentsOfPost", onDelete: CASCADE)

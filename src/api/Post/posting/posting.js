@@ -6,9 +6,17 @@ export default {
   Mutation: {
     posting: async (_, args, {request, checkIfAuthenticated}) => {
       checkIfAuthenticated(request);
-      const {title, hashtags, content, series_title, files} = args;
+      const {
+        title,
+        hashtags,
+        content,
+        series_id,
+        files,
+        thumbnail = null,
+      } = args;
       const {user} = request;
       const url = await GetUniqueUrl(user.username, args.url);
+
       let createPostOption = {
         title,
         user: {
@@ -16,13 +24,14 @@ export default {
             id: user.id,
           },
         },
+        thumbnail,
         url,
         content,
       };
-      if (series_title) {
+      if (series_id) {
         createPostOption.series = {
           connect: {
-            id: series_title,
+            id: series_id,
           },
         };
       }
@@ -35,7 +44,7 @@ export default {
 
       if (files) {
         files.forEach(async (file) => {
-          await prisma.createFile({
+          prisma.createFile({
             url: file,
             post: {
               connect: {

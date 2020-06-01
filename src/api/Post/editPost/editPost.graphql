@@ -9,8 +9,9 @@ type Mutation {
     title: String!
     url: String!
     hashtags: [String!]!
+    thumbnail: String
     content: String!
-    series_title: String
+    series_id: String
     files: [String!]!
     action: ACTIONS!
   ): Post

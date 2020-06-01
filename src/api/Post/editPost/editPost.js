@@ -1,5 +1,6 @@
 import {prisma} from "../../../../generated/prisma-client";
 import AddHashtag from "../../../AddHashtag";
+import {GetUniqueUrl} from "../../../GetUniqueUrl";
 
 const EDIT = "EDIT";
 const DELETE = "DELETE";
@@ -8,7 +9,16 @@ export default {
   Mutation: {
     editPost: async (_, args, {request, checkIfAuthenticated}) => {
       checkIfAuthenticated(request);
-      const {id, title, hashtags, content, series_title, files, action} = args;
+      const {
+        id,
+        title,
+        hashtags,
+        content,
+        series_id = null,
+        files,
+        thumbnail = null,
+        action,
+      } = args;
       const {user} = request;
       const url = await GetUniqueUrl(user.username, args.url);
 
@@ -23,26 +33,29 @@ export default {
             (name) => !hashtags.includes(name)
           );
 
-          await prisma.updatePost({
+          const updatePostOption = {
             where: {id},
             data: {
               title,
               content,
               url,
-              series: series_title
-                ? {
-                    update: {
-                      title: series_title,
-                    },
-                  }
-                : {},
+              thumbnail,
               hashtags: {
                 disconnect: removedHashtags.map((name) => {
                   return {name: name};
                 }),
               },
             },
-          });
+          };
+          if (series_id) {
+            updatePostOption.data.series = {
+              connect: {
+                id: series_id,
+              },
+            };
+          }
+
+          await prisma.updatePost(updatePostOption);
 
           const newHashtags = hashtags.filter(
             (name) => !existingHashtags.includes(name)
@@ -72,7 +85,7 @@ export default {
             });
           });
 
-          console.log(existingFiles, removedFiles, newFiles);
+          //console.log(existingFiles, removedFiles, newFiles);
 
           return prisma.post({id});
         } else if (action === DELETE) {

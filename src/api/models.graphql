@@ -25,6 +25,7 @@ type Post {
   hashtags: [Hashtag!]!
   series: Series
   files: [File!]!
+  thumbnail: String
   likes: [Like!]!
   comments: [Comment!]!
   createdAt: String!
