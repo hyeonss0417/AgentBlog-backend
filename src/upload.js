@@ -12,6 +12,7 @@ const upload = multer({
   storage: multerS3({
     s3,
     bucket: "agent-blog",
+    acl: "public-read",
     metadata: function(req, file, cb) {
       cb(null, {fieldName: file.fieldname});
     },
