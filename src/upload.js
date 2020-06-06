@@ -16,14 +16,22 @@ const upload = multer({
       cb(null, {fieldName: file.fieldname});
     },
     key: function(req, file, cb) {
-      cb(null, Date.now().toString());
+      cb(null, Date.now().toString()) + "_" + file.originalname;
     },
   }),
 });
-export const uploadMiddleware = upload.single("file");
+const uploadMiddleware = upload.single("file");
 
-export const uploadController = (req, res) => {
-  const location = req.file.location;
-  res.json({location});
-  res.end();
+export const uploadController = (req, res, next) => {
+  uploadMiddleware(req, res, function(err) {
+    if (err instanceof multer.MulterError) {
+      return next(err);
+    } else if (err) {
+      return next(err);
+    }
+    console.log("저장파일명 : " + req.file.originalname);
+    console.log("크기 : " + req.file.size);
+    console.log("경로 : " + req.file.location);
+    return res.json({success: 1, location: req.file.location});
+  });
 };
