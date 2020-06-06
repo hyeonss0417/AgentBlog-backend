@@ -13,6 +13,7 @@
     "@babel/runtime": "^7.10.1",
     "aws-sdk": "^2.691.0",
     "copy": "^0.3.2",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "graphql-tools": "^4.0.7",
     "graphql-yoga": "^1.18.3",
