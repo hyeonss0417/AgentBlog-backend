@@ -1,5 +1,5 @@
 <p align="center" >
-<a href="https://agent-blog.herokuapp.com/" align="center"> <img src="https://user-images.githubusercontent.com/9532432/71790917-3dd70f80-3076-11ea-8085-eb53aa4a9c14.png" width="250" height="250" align="center"/></a>
+<a href="https://agent-blog.herokuapp.com/" align="center"> <img src="https://user-images.githubusercontent.com/13609011/84003962-c3ecde80-a9a5-11ea-8722-8a7e9d99681f.png" width="250" height="250" align="center"/></a>
 </p>
 <h1 align="center">
   Agent Blog  <img alt="Swift" src="https://img.shields.io/badge/swift-5-orange.svg"> <img alt="Platform" src="https://img.shields.io/badge/platform-ios-lightgrey.svg"> 
