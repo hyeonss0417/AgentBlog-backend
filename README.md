@@ -2,21 +2,17 @@
 <a href="https://agent-blog.herokuapp.com/" align="center"> <img src="https://user-images.githubusercontent.com/13609011/84003962-c3ecde80-a9a5-11ea-8722-8a7e9d99681f.png" width="250" height="250" align="center"/></a>
 </p>
 <h1 align="center">
-  Agent Blog  <img alt="Swift" src="https://img.shields.io/badge/swift-5-orange.svg"> <img alt="Platform" src="https://img.shields.io/badge/platform-ios-lightgrey.svg"> 
+  Agent Blog  <img alt="Swift" src="https://img.shields.io/badge/API-GraphQL-red.svg"> <img alt="Database" src="https://img.shields.io/badge/Database-Prisma_MySQL-blue.svg"> <img alt="deploy" src="https://img.shields.io/badge/deploy-Heroku-purple.svg"> <img alt="Storage" src="https://img.shields.io/badge/storage-AWS S3-orange.svg">
 </h1>
 
 
 
-## 서비비스 소개
-Blog Server [ Express + Prisma + React and React Native + Heroku ]
+## 서비스 소개
 
-
-### K대학교 원터치 솔루션 서비스
-
-- 학생들이 자주 찾는 항공대학교 관련 정보를 한눈에 확인할 수 있습니다.
-- Kau 사용자는 LMS 자동로그인, 성적 확인, 장학금 내역 확인 등 학생 상세정보를 확인할 수 있습니다.                                                                                                                                                                                                                                                                                                                                                                                                                        
-- 배달음식 조회 및 리뷰, 오픈 게시판 등 커뮤니티 기능을 통해 학교 학생들과 익명으로 소통이 가능합니다.
-
+### (Velog)[https://velog.io/] 블로그 서비스 클론코딩 프로젝트
+- 개발자들을 위한 블로그 서비스.
+- 마크다운 (Markdown) 문법을 사용하여 개발자들이 쉽고 빠르게 예쁘게 꾸며진 포스트를 작성 할 수 있습니다.
+- 메인 페이지에서 개발 트렌드 및 인기 태그 제공을 통해 융용한 정보를 쉽고 빠르게 찾을 수 있습니다.
 
 
 ## UI
