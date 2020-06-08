@@ -40,7 +40,7 @@
 
 
 
-### Login
+### Home
 
 웹사이트 접근을 위한 사용자 로그인 데이터 저장
 
@@ -48,7 +48,7 @@
 - Firebase Token 을 이용한 자동로그인
 - Kau 웹사이트에 접근하여 Cookie 저장 (휘발성 데이터로 매 로그인시 재발급)
 
-### Main Menu
+### Posting
 
 - 실시간 도서관 좌석 조회
 - 사용자 정보를 기반으로 LMS site 자동 로그인
@@ -71,9 +71,11 @@
 
 
 ## 활용기술
-
-- **[Coordinator Pattern](https://k-elon.tistory.com/34)** : 페이지 이동이 잦은 해당 서비스에 대해서 뷰 컨트롤러 간의 연결을 느슨하게 하기 위해 사용. (DI) 
-- **[Firebase](https://github.com/firebase/firebase-ios-sdk)** : Messaging, Auth, Database, Storage, Functions 를 활용하여 서버리스한 환경 구축.
-- **[SwiftSoup](https://github.com/scinfu/SwiftSoup)** : HTML doc 파싱을 위한 라이브러리. Kau 웹사이트의 다양한 정보를 가져오기 위해 사용.
-- **[Realm](https://github.com/realm/realm-cocoa)** : mobile database 활용을 위해 사용. ORM 방식으로 쉽게 접근할 수 있음.
+- **[GraphQL]()**: 웹 클라이언트가 데이터를 서버로 부터 효율적으로 가져오는 것이 목적입니다. 
+- **[heroku]()**: GraphQL API 서버와 Prisma-MySQL Database 배포하기 위해 사용.
+- **[Amazon S3]()**: 온라인 스토리지 웹 서비스. 게시물의 이미지를 저장하기 위해 사용.
+- **[multer]()**: Node.js 미들웨어로 파일 업로드 핸들링을 도와주는 모듈. 게시물의 이미지를 업로드 하기 위해 사용.
+- **[babel]()**: 자바스크립트 컴파일러로 ES8으로 작성한 코드를 호환성을 위해 하위 버전 코드로 변환해주는 모듈.
+- **[nodemailer]()**: Node.js 에서 e-mail 을 쉽게 보낼 수 있게 도와주는 모듈. 회원가입 시 이메일 인증을 위해 사용.
+- **[passport]()**: 토큰인증방식을 위해 사용.
 
