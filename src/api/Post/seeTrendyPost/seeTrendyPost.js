@@ -4,7 +4,8 @@ export default {
   Query: {
     seeTrendyPost: async (_, args) => {
       const posts = await prisma.posts({
-        orderBy: "updatedAt_ASC",
+        where: {thumbnail_not: null},
+        orderBy: "updatedAt_DESC",
         first: 30,
       });
 
