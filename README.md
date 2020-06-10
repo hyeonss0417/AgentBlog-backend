@@ -17,57 +17,48 @@
 
 ## UI
 
-<table>
-   <tr>
-     <th align="center">
-       <img width="200" alt="1" src="https://user-images.githubusercontent.com/9532432/71674308-31c12880-2dbe-11ea-9a7e-9ecb15b52e4e.gif"/>
-       <br><br>[Login]
-     </th>
-     <th align="center">
-       <img width="200" alt="1" src="https://user-images.githubusercontent.com/9532432/71674314-3685dc80-2dbe-11ea-8657-2d59f6e708f3.gif"/>
-       <br><br>[Main Menu] 
-    </th>
-     <th align="center">
-      <img width="200" alt="1" src="https://user-images.githubusercontent.com/9532432/71674315-3685dc80-2dbe-11ea-8d53-d2e61c601d6d.gif"/>
-       <br><br>[Sub Menu]
-    </th>
-     <th align="center">
-      <img width="200" alt="1" src="https://user-images.githubusercontent.com/9532432/71674104-bfe8df00-2dbd-11ea-8c45-1e2e68a7ae4c.gif"/>
-       <br><br>[Community]
-    </th>
-  </tr>
-</table>
+### 1) 메인 홈페이지
 
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e659c33b-2ad9-4177-8cea-c689065a23af/velog_feed.mov.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e659c33b-2ad9-4177-8cea-c689065a23af/velog_feed.mov.gif)
 
+- Card 디자인 & Skeleton 로딩 구현
+- 트렌딩 / 최신 게시물 노출
+- hover 애니메이션
+- 인기태그 표시
 
-### Home
+### 2) Responsive Layout
 
-웹사이트 접근을 위한 사용자 로그인 데이터 저장
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c3db8bea-0490-44b3-82e3-4a67371e8e6a/Screen_Recording_2020-06-09_at_6.21.27_PM.mov.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c3db8bea-0490-44b3-82e3-4a67371e8e6a/Screen_Recording_2020-06-09_at_6.21.27_PM.mov.gif)
 
-- 입력된 사용자 정보를 암호화 하여 서버에 저장
-- Firebase Token 을 이용한 자동로그인
-- Kau 웹사이트에 접근하여 Cookie 저장 (휘발성 데이터로 매 로그인시 재발급)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/17f64637-8b35-4437-853c-a56991bf93dc/velog_responsive2.mov.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/17f64637-8b35-4437-853c-a56991bf93dc/velog_responsive2.mov.gif)
 
-### Posting
+- 미디어 쿼리를 이용하여 반응형 웹사이트를 구현
 
-- 실시간 도서관 좌석 조회
-- 사용자 정보를 기반으로 LMS site 자동 로그인
+### 3) 로그인
 
-### Sub Menu
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2017f4f4-319a-4bfa-a7d6-8feb4a69e54b/velog_login2.mov.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2017f4f4-319a-4bfa-a7d6-8feb4a69e54b/velog_login2.mov.gif)
 
-사용자 개인정보(성적, 장학금 내역, 시간표, 석차 등) 접근
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e2d92b3b-692e-47c7-8582-b5d17a77bfbf/velog_createAccount.mov.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e2d92b3b-692e-47c7-8582-b5d17a77bfbf/velog_createAccount.mov.gif)
 
-- 사용자 Cookie 데이터를 기반으로 웹사이트 접근
-- WKWebview (iOS <= 10,  Webview) 와 Javascript Bridge를 활용하여 Redirect 과정을 자동화
-- 기존의 복잡한 과정이 생략되고 원포인트 접근
+- 모달을 통해 로그인과 회원가입을 구현했습니다.
+    - Portal 사용
 
-### Community
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7c802e74-6dd6-4b76-9fe2-e02d6a74d801/velog_login.mov.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7c802e74-6dd6-4b76-9fe2-e02d6a74d801/velog_login.mov.gif)
 
-사용자들간의 커뮤니티 기능
+- 이메일 인증으로 로그인 구현
+    - nodemailer 사용
 
-- Open 게시판
-- 배달음식 주문, 메뉴판, 리뷰
+### 4) 해시태그 검색
 
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4fecec9d-b812-453e-955b-79f64e74df68/velog_hashtag.mov.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4fecec9d-b812-453e-955b-79f64e74df68/velog_hashtag.mov.gif)
+
+- Skeleton loading 구현
+
+### 5) 게시물 검색
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bb103815-4aed-4e07-b91d-98e89c791350/velog_search.mov.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bb103815-4aed-4e07-b91d-98e89c791350/velog_search.mov.gif)
+
+- Input 값의 변화를 실시간으로 감지하여 입력 즉시 검색 데이터를 받아옴
 
 
 ## 활용기술
