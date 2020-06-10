@@ -2,7 +2,7 @@
 <a href="https://agent-blog.herokuapp.com/" align="center"> <img src="https://user-images.githubusercontent.com/13609011/84003962-c3ecde80-a9a5-11ea-8722-8a7e9d99681f.png" width="250" height="250" align="center"/></a>
 </p>
 <h1 align="center">
-  Agent Blog Server </br>  <img alt="Swift" src="https://img.shields.io/badge/API-GraphQL-red.svg"> <img alt="Database" src="https://img.shields.io/badge/Database-Prisma_MySQL-blue.svg"> <img alt="deploy" src="https://img.shields.io/badge/deploy-Heroku-purple.svg"> <img alt="Storage" src="https://img.shields.io/badge/storage-AWS S3-orange.svg">
+  Agent Blog API Server </br>  <img alt="Swift" src="https://img.shields.io/badge/API-GraphQL-red.svg"> <img alt="Database" src="https://img.shields.io/badge/Database-Prisma_MySQL-blue.svg"> <img alt="deploy" src="https://img.shields.io/badge/deploy-Heroku-purple.svg"> <img alt="Storage" src="https://img.shields.io/badge/storage-AWS S3-orange.svg">
 </h1>
 
 ### 🔥 Motivation
@@ -32,6 +32,8 @@
 - hover 애니메이션
 - 인기태그 표시
 
+
+
 ### 2) Responsive Layout
 <table>
    <tr>
@@ -47,6 +49,8 @@
 </table>
 
 - 미디어 쿼리를 이용하여 반응형 웹사이트를 구현
+
+
 
 ### 3) 로그인
 
@@ -71,17 +75,22 @@
 - 이메일 인증으로 로그인 구현
     - nodemailer 사용
 
+
+
 ### 4) 해시태그 검색
 
 ![velog_hashtag mov](https://user-images.githubusercontent.com/13609011/84225382-f0296c00-ab19-11ea-9582-e3b538e6a086.gif)
 
 - Skeleton loading 구현
 
+
+
 ### 5) 게시물 검색
 
 ![velog_search mov](https://user-images.githubusercontent.com/13609011/84225393-f91a3d80-ab19-11ea-9db4-99c66a9edec0.gif)
 
 - Input 값의 변화를 실시간으로 감지하여 입력 즉시 검색 데이터를 받아옴
+
 
 
 ## 활용기술
