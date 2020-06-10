@@ -5,6 +5,11 @@
   Agent Blog Server </br>  <img alt="Swift" src="https://img.shields.io/badge/API-GraphQL-red.svg"> <img alt="Database" src="https://img.shields.io/badge/Database-Prisma_MySQL-blue.svg"> <img alt="deploy" src="https://img.shields.io/badge/deploy-Heroku-purple.svg"> <img alt="Storage" src="https://img.shields.io/badge/storage-AWS S3-orange.svg">
 </h1>
 
+### 🔥 Motivation
+
+> 인스타그램 클론코딩을 하면서 익힌 React + GraphQL 풀스택 기술을 연습하고, **협업능력**을 기르기 위해 시작한 프로젝트입니다.
+
+또한 React를 Javascript로 개발해오면서 디버깅이 불편하고 유지보수도 어렵다는 단점을 개선하고자 **TypeScript**를 도입하게 되었습니다.  (+ 효율적인 협업을 위해)
 
 
 ## 서비스 소개
@@ -13,6 +18,7 @@
 - 개발자들을 위한 블로그 서비스.
 - 마크다운 (Markdown) 문법을 사용하여 개발자들이 쉽고 빠르게 예쁘게 꾸며진 포스트를 작성 할 수 있습니다.
 - 메인 페이지에서 개발 트렌드 및 인기 태그 제공을 통해 융용한 정보를 쉽고 빠르게 찾을 수 있습니다.
+- 개발자들을 위한 블로그 서비스인 velog를 프론트엔드, 벡엔드 모두 클론코딩하여 Markdown 기반 게시물 작성, 해시태그 설정, 게시물 검색, 해시태그 검색, 반응형디자인 등 대부분의 기능을 구현하였습니다.
 
 
 ## UI
