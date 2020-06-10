@@ -19,7 +19,7 @@
 
 ### 1) 메인 홈페이지
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e659c33b-2ad9-4177-8cea-c689065a23af/velog_feed.mov.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e659c33b-2ad9-4177-8cea-c689065a23af/velog_feed.mov.gif)
+![velog_feed mov](https://user-images.githubusercontent.com/13609011/84225378-edc71200-ab19-11ea-9fd8-371c31a68d09.gif)
 
 - Card 디자인 & Skeleton 로딩 구현
 - 트렌딩 / 최신 게시물 노출
@@ -28,35 +28,35 @@
 
 ### 2) Responsive Layout
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c3db8bea-0490-44b3-82e3-4a67371e8e6a/Screen_Recording_2020-06-09_at_6.21.27_PM.mov.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c3db8bea-0490-44b3-82e3-4a67371e8e6a/Screen_Recording_2020-06-09_at_6.21.27_PM.mov.gif)
+![velog_resonsive mov](https://user-images.githubusercontent.com/13609011/84225388-f586b680-ab19-11ea-812c-4adea276119b.gif)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/17f64637-8b35-4437-853c-a56991bf93dc/velog_responsive2.mov.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/17f64637-8b35-4437-853c-a56991bf93dc/velog_responsive2.mov.gif)
+[velog_responsive2 mov](https://user-images.githubusercontent.com/13609011/84225392-f7e91080-ab19-11ea-884a-ec2b1ec6920a.gif)
 
 - 미디어 쿼리를 이용하여 반응형 웹사이트를 구현
 
 ### 3) 로그인
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2017f4f4-319a-4bfa-a7d6-8feb4a69e54b/velog_login2.mov.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2017f4f4-319a-4bfa-a7d6-8feb4a69e54b/velog_login2.mov.gif)
+![velog_login2 mov](https://user-images.githubusercontent.com/13609011/84225386-f3bcf300-ab19-11ea-96e1-073c342a652d.gif)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e2d92b3b-692e-47c7-8582-b5d17a77bfbf/velog_createAccount.mov.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e2d92b3b-692e-47c7-8582-b5d17a77bfbf/velog_createAccount.mov.gif)
+![velog_createAccount mov](https://user-images.githubusercontent.com/13609011/84225370-ebfd4e80-ab19-11ea-84d7-0becdc0e8765.gif)
 
 - 모달을 통해 로그인과 회원가입을 구현했습니다.
     - Portal 사용
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7c802e74-6dd6-4b76-9fe2-e02d6a74d801/velog_login.mov.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7c802e74-6dd6-4b76-9fe2-e02d6a74d801/velog_login.mov.gif)
+![velog_login mov](https://user-images.githubusercontent.com/13609011/84225384-f1f32f80-ab19-11ea-8172-9adfed4cab7d.gif)
 
 - 이메일 인증으로 로그인 구현
     - nodemailer 사용
 
 ### 4) 해시태그 검색
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4fecec9d-b812-453e-955b-79f64e74df68/velog_hashtag.mov.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4fecec9d-b812-453e-955b-79f64e74df68/velog_hashtag.mov.gif)
+![velog_hashtag mov](https://user-images.githubusercontent.com/13609011/84225382-f0296c00-ab19-11ea-9582-e3b538e6a086.gif)
 
 - Skeleton loading 구현
 
 ### 5) 게시물 검색
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bb103815-4aed-4e07-b91d-98e89c791350/velog_search.mov.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bb103815-4aed-4e07-b91d-98e89c791350/velog_search.mov.gif)
+![velog_search mov](https://user-images.githubusercontent.com/13609011/84225393-f91a3d80-ab19-11ea-9db4-99c66a9edec0.gif)
 
 - Input 값의 변화를 실시간으로 감지하여 입력 즉시 검색 데이터를 받아옴
 
