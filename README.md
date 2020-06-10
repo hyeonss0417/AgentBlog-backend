@@ -27,18 +27,35 @@
 - 인기태그 표시
 
 ### 2) Responsive Layout
-
-![velog_resonsive mov](https://user-images.githubusercontent.com/13609011/84225388-f586b680-ab19-11ea-812c-4adea276119b.gif)
-
-[velog_responsive2 mov](https://user-images.githubusercontent.com/13609011/84225392-f7e91080-ab19-11ea-884a-ec2b1ec6920a.gif)
+<table>
+   <tr>
+     <th align="center">
+       <img width="400" alt="1" src="https://user-images.githubusercontent.com/13609011/84225388-f586b680-ab19-11ea-812c-4adea276119b.gif"/>
+       <br><br>[피드]
+     </th>
+     <th align="center">
+       <img width="400" alt="2" src="https://user-images.githubusercontent.com/13609011/84225392-f7e91080-ab19-11ea-884a-ec2b1ec6920a.gif"/>
+       <br><br>[검색] 
+    </th>
+  </tr>
+</table>
 
 - 미디어 쿼리를 이용하여 반응형 웹사이트를 구현
 
 ### 3) 로그인
 
-![velog_login2 mov](https://user-images.githubusercontent.com/13609011/84225386-f3bcf300-ab19-11ea-96e1-073c342a652d.gif)
-
-![velog_createAccount mov](https://user-images.githubusercontent.com/13609011/84225370-ebfd4e80-ab19-11ea-84d7-0becdc0e8765.gif)
+<table>
+   <tr>
+     <th align="center">
+       <img width="400" alt="1" src="https://user-images.githubusercontent.com/13609011/84225386-f3bcf300-ab19-11ea-96e1-073c342a652d.gif"/>
+       <br><br>[로그인]
+     </th>
+     <th align="center">
+       <img width="400" alt="2" src="https://user-images.githubusercontent.com/13609011/84225370-ebfd4e80-ab19-11ea-84d7-0becdc0e8765.gif"/>
+       <br><br>[회원가입] 
+    </th>
+  </tr>
+</table>
 
 - 모달을 통해 로그인과 회원가입을 구현했습니다.
     - Portal 사용
