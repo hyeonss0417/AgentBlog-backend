@@ -9,16 +9,7 @@ import {uploadController} from "./upload";
 import cors from "cors";
 
 const PORT = process.env.PORT || 4000;
-const typeDefs = `
-    type Query{
-        hello: String!
-    }
-`;
-const resolvers = {
-  Query: {
-    hello: () => "Hi",
-  },
-};
+
 const server = new GraphQLServer({
   schema,
   context: ({request}) => ({request, checkIfAuthenticated}),

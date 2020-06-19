@@ -5,7 +5,7 @@ export default {
     seeLatestPost: async (_, args) => {
       const posts = await prisma.posts({
         orderBy: "createdAt_DESC",
-        first: 30,
+        first: 100,
       });
 
       return posts;

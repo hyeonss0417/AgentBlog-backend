@@ -5,6 +5,8 @@ export const COMMENT_FRAGMENT = `
         user {
             username
         }
+        createdAt
+        updatedAt
     }
 `;
 
