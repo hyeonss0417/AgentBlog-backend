@@ -39,12 +39,10 @@ export const sendSecretMail = (address, secret) => {
 export const generateToken = (id) => jwt.sign({id}, process.env.JWT_SECRET);
 
 export const getUniqueUrl = async (username, url) => {
-  let uniqueUrl = slugify(url, {
-    lower: true,
-    strict: true,
-    useCreateIndex: true,
-  });
-
+  let uniqueUrl = url
+    .toLowerCase()
+    .replace(/ /g, "-")
+    .replace(/[^\w-[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]]+/g, "");
   let existingPost = true;
   while (existingPost) {
     existingPost = await prisma.$exists.post({

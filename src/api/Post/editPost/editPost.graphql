@@ -11,6 +11,7 @@ type Mutation {
     hashtags: [String!]!
     thumbnail: String
     content: String!
+    description: String
     series_id: String
     files: [String!]!
     action: ACTIONS!

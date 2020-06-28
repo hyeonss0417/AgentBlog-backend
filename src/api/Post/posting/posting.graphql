@@ -5,6 +5,7 @@ type Mutation {
     content: String!
     series_id: String
     thumbnail: String
+    description: String
     url: String!
     files: [String!]
   ): Post!
