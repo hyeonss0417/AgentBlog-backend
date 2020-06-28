@@ -27,7 +27,8 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "prisma": "1.33.0",
-    "prisma-client-lib": "1.26.4"
+    "prisma-client-lib": "1.26.4",
+    "slugify": "^1.4.4"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.10.1",

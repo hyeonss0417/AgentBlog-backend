@@ -1,8 +1,13 @@
 import {generateSecret} from "./utils";
 import {prisma} from "../generated/prisma-client";
+import slugify from "slugify";
 
 export const GetUniqueUrl = async (username, url) => {
-  let uniqueUrl = url;
+  let uniqueUrl = slugify(url, {
+    lower: true,
+    strict: true,
+    useCreateIndex: true,
+  });
 
   let existingPost = true;
   while (existingPost) {

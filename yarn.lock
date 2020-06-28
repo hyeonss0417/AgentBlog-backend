@@ -6626,6 +6626,11 @@ slice-ansi@1.0.0:
   dependencies:
     is-fullwidth-code-point "^2.0.0"
 
+slugify@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.4.4.tgz#2f032ffa52b1e1ca2a27737c1ce47baae3d0883a"
+  integrity sha512-N2+9NJ8JzfRMh6PQLrBeDEnVDQZSytE/W4BTC4fNNPmO90Uu58uNwSlIJSs+lmPgWsaAF79WLhVPe5tuy7spjw==
+
 smtpapi@^1.2.0:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/smtpapi/-/smtpapi-1.4.2.tgz#0542bdad7ec0e485fa17e70a7d514ad66b4f329d"
