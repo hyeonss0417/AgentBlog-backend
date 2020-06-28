@@ -6,6 +6,7 @@ export default {
     isLiked: (parent, _, {request}) => {
       const {id: postId} = parent;
       const {user} = request;
+      if (user === undefined) return false;
       return prisma.$exists.like({
         AND: [{post: {id: postId}}, {user: {id: user.id}}],
       });
