@@ -19,6 +19,7 @@ type Post {
   title: String!
   url: String!
   content: String!
+  description: String
   hashtags: [Hashtag!]! @relation(name:"HashtagsOfPost", onDelete: SET_NULL)
   series: Series @relation(name:"SeriesOfPost")
   thumbnail: String

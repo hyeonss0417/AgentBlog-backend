@@ -1,6 +1,5 @@
 import {prisma} from "../../../../generated/prisma-client";
-import AddHashtag from "../../../AddHashtag";
-import {GetUniqueUrl} from "../../../GetUniqueUrl";
+import {addHashtag, getUniqueUrl, sanitizeContent} from "../../../utils";
 
 const EDIT = "EDIT";
 const DELETE = "DELETE";
@@ -14,13 +13,14 @@ export default {
         title,
         hashtags,
         content,
+        description = null,
         series_id = null,
         files,
         thumbnail = null,
         action,
       } = args;
       const {user} = request;
-      const url = await GetUniqueUrl(user.username, args.url);
+      const url = await getUniqueUrl(user.username, args.url);
 
       const post = await prisma.$exists.post({id, user: {id: user.id}});
 
@@ -37,7 +37,8 @@ export default {
             where: {id},
             data: {
               title,
-              content,
+              content: sanitizeContent(content),
+              description: description,
               url,
               thumbnail,
               hashtags: {
@@ -60,7 +61,7 @@ export default {
           const newHashtags = hashtags.filter(
             (name) => !existingHashtags.includes(name)
           );
-          AddHashtag(id, newHashtags);
+          addHashtag(id, newHashtags);
 
           //File upsert
           let existingFiles = await prisma.post({id}).files();

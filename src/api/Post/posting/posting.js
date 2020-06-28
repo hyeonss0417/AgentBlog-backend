@@ -1,6 +1,5 @@
 import {prisma} from "../../../../generated/prisma-client";
-import AddHashtag from "../../../AddHashtag";
-import {GetUniqueUrl} from "../../../GetUniqueUrl";
+import {addHashtag, getUniqueUrl, sanitizeContent} from "../../../utils";
 
 export default {
   Mutation: {
@@ -9,13 +8,14 @@ export default {
       const {
         title,
         hashtags,
+        description = null,
         content,
         series_id,
         files,
         thumbnail = null,
       } = args;
       const {user} = request;
-      const url = await GetUniqueUrl(user.username, args.url);
+      const url = await getUniqueUrl(user.username, args.url);
 
       let createPostOption = {
         title,
@@ -26,7 +26,8 @@ export default {
         },
         thumbnail,
         url,
-        content,
+        content: sanitizeContent(content),
+        description,
       };
       if (series_id) {
         createPostOption.series = {
@@ -39,7 +40,7 @@ export default {
       const post = await prisma.createPost(createPostOption);
 
       if (hashtags) {
-        AddHashtag(post.id, hashtags);
+        addHashtag(post.id, hashtags);
       }
 
       if (files) {

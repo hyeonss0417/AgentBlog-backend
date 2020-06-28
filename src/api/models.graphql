@@ -22,6 +22,7 @@ type Post {
   title: String!
   url: String!
   content: String!
+  description: String
   hashtags: [Hashtag!]!
   series: Series
   files: [File!]!

@@ -2,6 +2,11 @@ import nodemailer from "nodemailer";
 import sgTransport from "nodemailer-sendgrid-transport";
 import jwt from "jsonwebtoken";
 
+import {prisma} from "../generated/prisma-client";
+import slugify from "slugify";
+import createDomPurify from "dompurify";
+import {JSDOM} from "jsdom";
+
 export const generateSecret = () => {
   const secretKey = Math.random()
     .toString(36)
@@ -31,4 +36,65 @@ export const sendSecretMail = (address, secret) => {
   return sendMail(email);
 };
 
-export const generateToken = (id) => jwt.sign({ id }, process.env.JWT_SECRET);
+export const generateToken = (id) => jwt.sign({id}, process.env.JWT_SECRET);
+
+export const getUniqueUrl = async (username, url) => {
+  let uniqueUrl = slugify(url, {
+    lower: true,
+    strict: true,
+    useCreateIndex: true,
+  });
+
+  let existingPost = true;
+  while (existingPost) {
+    existingPost = await prisma.$exists.post({
+      user: {username},
+      url: uniqueUrl,
+    });
+    if (existingPost) {
+      uniqueUrl = url + "-" + generateSecret().toLowerCase();
+    }
+  }
+  return uniqueUrl;
+};
+
+export const addHashtag = (postId, hashtags) => {
+  hashtags.forEach(async (hashtag) => {
+    try {
+      const existingHashtag = await prisma.hashtag({name: hashtag});
+
+      if (existingHashtag) {
+        await prisma.updateHashtag({
+          where: {name: hashtag},
+          data: {
+            posts: {
+              connect: {
+                id: postId,
+              },
+            },
+            postsCount: existingHashtag.postsCount + 1,
+          },
+        });
+      } else {
+        await prisma.createHashtag({
+          name: hashtag,
+          posts: {
+            connect: {
+              id: postId,
+            },
+          },
+          postsCount: 0,
+        });
+      }
+      return true;
+    } catch (err) {
+      console.log(err);
+      return false;
+    }
+  });
+};
+
+export const sanitizeContent = (content) => {
+  const dompurify = createDomPurify(new JSDOM().window);
+  return dompurify.sanitize(content);
+};
