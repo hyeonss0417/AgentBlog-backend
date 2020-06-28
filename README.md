@@ -2,9 +2,12 @@
 <a href="https://agent-blog.herokuapp.com/" align="center"> <img src="https://user-images.githubusercontent.com/13609011/84003962-c3ecde80-a9a5-11ea-8722-8a7e9d99681f.png" width="250" height="250" align="center"/></a>
 </p>
 <h1 align="center">
-  Agent Blog Server </br>  <img alt="Swift" src="https://img.shields.io/badge/API-GraphQL-red.svg"> <img alt="Database" src="https://img.shields.io/badge/Database-Prisma_MySQL-blue.svg"> <img alt="deploy" src="https://img.shields.io/badge/deploy-Heroku-purple.svg"> <img alt="Storage" src="https://img.shields.io/badge/storage-AWS S3-orange.svg">
+  Agent Blog API Server </br>  <img alt="Swift" src="https://img.shields.io/badge/API-GraphQL-red.svg"> <img alt="Database" src="https://img.shields.io/badge/Database-Prisma_MySQL-blue.svg"> <img alt="deploy" src="https://img.shields.io/badge/deploy-Heroku-purple.svg"> <img alt="Storage" src="https://img.shields.io/badge/storage-AWS S3-orange.svg">
 </h1>
 
+### 🔥 Motivation
+
+> 인스타그램 클론코딩을 하면서 익힌 React + GraphQL 풀스택 기술을 연습하고, **협업능력**을 기르기 위해 시작한 프로젝트입니다. <br /> <br /> 또한 React를 Javascript로 개발해오면서 디버깅이 불편하고 유지보수도 어렵다는 단점을 개선하고자 **TypeScript**를 도입하게 되었습니다.  (+ 효율적인 협업을 위해)
 
 
 ## 서비스 소개
@@ -13,60 +16,78 @@
 - 개발자들을 위한 블로그 서비스.
 - 마크다운 (Markdown) 문법을 사용하여 개발자들이 쉽고 빠르게 예쁘게 꾸며진 포스트를 작성 할 수 있습니다.
 - 메인 페이지에서 개발 트렌드 및 인기 태그 제공을 통해 융용한 정보를 쉽고 빠르게 찾을 수 있습니다.
+- 개발자들을 위한 블로그 서비스인 velog를 프론트엔드, 벡엔드 모두 클론코딩하여 Markdown 기반 게시물 작성, 해시태그 설정, 게시물 검색, 해시태그 검색, 반응형디자인 등 대부분의 기능을 구현하였습니다.
 
 
 ## UI
 
+### 1) 메인 홈페이지
+
+![velog_feed mov](https://user-images.githubusercontent.com/13609011/84225378-edc71200-ab19-11ea-9fd8-371c31a68d09.gif)
+
+- Card 디자인 & Skeleton 로딩 구현
+- 트렌딩 / 최신 게시물 노출
+- hover 애니메이션
+- 인기태그 표시
+
+
+
+### 2) Responsive Layout
 <table>
    <tr>
      <th align="center">
-       <img width="200" alt="1" src="https://user-images.githubusercontent.com/9532432/71674308-31c12880-2dbe-11ea-9a7e-9ecb15b52e4e.gif"/>
-       <br><br>[Login]
+       <img width="400" alt="1" src="https://user-images.githubusercontent.com/13609011/84225388-f586b680-ab19-11ea-812c-4adea276119b.gif"/>
+       <br><br>[피드]
      </th>
      <th align="center">
-       <img width="200" alt="1" src="https://user-images.githubusercontent.com/9532432/71674314-3685dc80-2dbe-11ea-8657-2d59f6e708f3.gif"/>
-       <br><br>[Main Menu] 
-    </th>
-     <th align="center">
-      <img width="200" alt="1" src="https://user-images.githubusercontent.com/9532432/71674315-3685dc80-2dbe-11ea-8d53-d2e61c601d6d.gif"/>
-       <br><br>[Sub Menu]
-    </th>
-     <th align="center">
-      <img width="200" alt="1" src="https://user-images.githubusercontent.com/9532432/71674104-bfe8df00-2dbd-11ea-8c45-1e2e68a7ae4c.gif"/>
-       <br><br>[Community]
+       <img width="400" alt="2" src="https://user-images.githubusercontent.com/13609011/84225392-f7e91080-ab19-11ea-884a-ec2b1ec6920a.gif"/>
+       <br><br>[검색] 
     </th>
   </tr>
 </table>
 
+- 미디어 쿼리를 이용하여 반응형 웹사이트를 구현
 
 
-### Home
 
-웹사이트 접근을 위한 사용자 로그인 데이터 저장
+### 3) 로그인
 
-- 입력된 사용자 정보를 암호화 하여 서버에 저장
-- Firebase Token 을 이용한 자동로그인
-- Kau 웹사이트에 접근하여 Cookie 저장 (휘발성 데이터로 매 로그인시 재발급)
+<table>
+   <tr>
+     <th align="center">
+       <img width="400" alt="1" src="https://user-images.githubusercontent.com/13609011/84225386-f3bcf300-ab19-11ea-96e1-073c342a652d.gif"/>
+       <br><br>[로그인]
+     </th>
+     <th align="center">
+       <img width="400" alt="2" src="https://user-images.githubusercontent.com/13609011/84225370-ebfd4e80-ab19-11ea-84d7-0becdc0e8765.gif"/>
+       <br><br>[회원가입] 
+    </th>
+  </tr>
+</table>
 
-### Posting
+- 모달을 통해 로그인과 회원가입을 구현했습니다.
+    - Portal 사용
 
-- 실시간 도서관 좌석 조회
-- 사용자 정보를 기반으로 LMS site 자동 로그인
+![velog_login mov](https://user-images.githubusercontent.com/13609011/84225384-f1f32f80-ab19-11ea-8172-9adfed4cab7d.gif)
 
-### Sub Menu
+- 이메일 인증으로 로그인 구현
+    - nodemailer 사용
 
-사용자 개인정보(성적, 장학금 내역, 시간표, 석차 등) 접근
 
-- 사용자 Cookie 데이터를 기반으로 웹사이트 접근
-- WKWebview (iOS <= 10,  Webview) 와 Javascript Bridge를 활용하여 Redirect 과정을 자동화
-- 기존의 복잡한 과정이 생략되고 원포인트 접근
 
-### Community
+### 4) 해시태그 검색
 
-사용자들간의 커뮤니티 기능
+![velog_hashtag mov](https://user-images.githubusercontent.com/13609011/84225382-f0296c00-ab19-11ea-9582-e3b538e6a086.gif)
 
-- Open 게시판
-- 배달음식 주문, 메뉴판, 리뷰
+- Skeleton loading 구현
+
+
+
+### 5) 게시물 검색
+
+![velog_search mov](https://user-images.githubusercontent.com/13609011/84225393-f91a3d80-ab19-11ea-9db4-99c66a9edec0.gif)
+
+- Input 값의 변화를 실시간으로 감지하여 입력 즉시 검색 데이터를 받아옴
 
 
 
@@ -79,3 +100,4 @@
 - **[nodemailer]()**: Node.js 에서 e-mail 을 쉽게 보낼 수 있게 도와주는 모듈. 회원가입 시 이메일 인증을 위해 사용.
 - **[passport]()**: 토큰인증방식을 위해 사용.
 - **[morgan]()**: 서버 요청에 대한 기록을 콘솔에 저장하기 위해 사용.
+
