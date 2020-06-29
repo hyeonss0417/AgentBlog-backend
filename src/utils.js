@@ -42,17 +42,20 @@ export const getUniqueUrl = async (username, url) => {
   let uniqueUrl = url
     .toLowerCase()
     .replace(/ /g, "-")
-    .replace(/[^\w-[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]]+/g, "");
+    .replace(/[^\w-[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]]+/g, "")
+    .replace(/#/g, "");
+
   let existingPost = true;
   while (existingPost) {
     existingPost = await prisma.$exists.post({
       user: {username},
       url: uniqueUrl,
     });
-    if (existingPost) {
+    if (existingPost || uniqueUrl === "") {
       uniqueUrl = url + "-" + generateSecret().toLowerCase();
     }
   }
+  console.log(uniqueUrl);
   return uniqueUrl;
 };
 
