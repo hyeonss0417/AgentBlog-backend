@@ -4,6 +4,7 @@ export default {
   Mutation: {
     editUser: (_, args, {request, checkIfAuthenticated}) => {
       checkIfAuthenticated(request);
+      console.log(args);
       const {username, blogname, bio, avatar} = args;
       const {user} = request;
       return prisma.updateUser({
