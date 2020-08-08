@@ -3,7 +3,6 @@ import sgTransport from "nodemailer-sendgrid-transport";
 import jwt from "jsonwebtoken";
 
 import {prisma} from "../generated/prisma-client";
-import slugify from "slugify";
 import createDomPurify from "dompurify";
 import {JSDOM} from "jsdom";
 
