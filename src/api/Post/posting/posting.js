@@ -11,7 +11,6 @@ export default {
         description = null,
         content,
         series_id,
-        files,
         thumbnail = null,
       } = args;
       const {user} = request;
@@ -43,18 +42,6 @@ export default {
         addHashtag(post.id, hashtags);
       }
 
-      if (files) {
-        files.forEach(async (file) => {
-          prisma.createFile({
-            url: file,
-            post: {
-              connect: {
-                id: post.id,
-              },
-            },
-          });
-        });
-      }
       return post;
     },
   },

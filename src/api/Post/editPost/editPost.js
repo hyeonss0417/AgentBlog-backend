@@ -15,7 +15,6 @@ export default {
         content,
         description = null,
         series_id = null,
-        files,
         thumbnail = null,
         action,
       } = args;
@@ -62,31 +61,6 @@ export default {
             (name) => !existingHashtags.includes(name)
           );
           addHashtag(id, newHashtags);
-
-          //File upsert
-          let existingFiles = await prisma.post({id}).files();
-          existingFiles = existingFiles.map((file) => file.url);
-
-          const removedFiles = existingFiles.filter(
-            (url) => !files.includes(url)
-          );
-
-          await prisma.deleteManyFiles({post: {id}, url_in: removedFiles});
-
-          const newFiles = files.filter((url) => !existingFiles.includes(url));
-
-          newFiles.forEach(async (file) => {
-            await prisma.createFile({
-              url: file,
-              post: {
-                connect: {
-                  id,
-                },
-              },
-            });
-          });
-
-          //console.log(existingFiles, removedFiles, newFiles);
 
           return prisma.post({id});
         } else if (action === DELETE) {

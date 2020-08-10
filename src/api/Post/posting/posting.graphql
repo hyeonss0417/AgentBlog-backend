@@ -7,6 +7,5 @@ type Mutation {
     thumbnail: String
     description: String
     url: String!
-    files: [String!]
   ): Post!
 }

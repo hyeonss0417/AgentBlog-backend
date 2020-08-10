@@ -13,7 +13,6 @@ type Mutation {
     content: String!
     description: String
     series_id: String
-    files: [String!]!
     action: ACTIONS!
   ): Post
 }
