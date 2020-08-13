@@ -15,6 +15,7 @@ export const USER_FRAGMENT = `
         id
         username
         avatar
+        bio
     }
 `;
 
