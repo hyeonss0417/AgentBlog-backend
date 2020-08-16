@@ -39,7 +39,9 @@ export default {
               content: sanitizeContent(content),
               description: description,
               url,
-              thumbnail,
+              thumbnail: thumbnail
+                ? thumbnail
+                : getThumbnailFromContent(content),
               hashtags: {
                 disconnect: removedHashtags.map((name) => {
                   return {name: name};

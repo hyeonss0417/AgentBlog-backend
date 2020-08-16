@@ -1,5 +1,10 @@
 import {prisma} from "../../../../generated/prisma-client";
-import {addHashtag, getUniqueUrl, sanitizeContent} from "../../../utils";
+import {
+  addHashtag,
+  getUniqueUrl,
+  sanitizeContent,
+  getThumbnailFromContent,
+} from "../../../utils";
 
 export default {
   Mutation: {
@@ -23,7 +28,7 @@ export default {
             id: user.id,
           },
         },
-        thumbnail,
+        thumbnail: thumbnail ? thumbnail : getThumbnailFromContent(content),
         url,
         content: sanitizeContent(content),
         description,

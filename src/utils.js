@@ -98,3 +98,8 @@ export const sanitizeContent = (content) => {
   const dompurify = createDomPurify(new JSDOM().window);
   return dompurify.sanitize(content);
 };
+
+export const getThumbnailFromContent = (content) => {
+  const imageRegex = /!\[([^\[\]]*?)\]\((\S*?)\)/g;
+  return imageRegex.exec(content)[2];
+};
