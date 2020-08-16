@@ -5,7 +5,9 @@ export default {
     seeUser: async (_, args) => {
       const {username} = args;
       const user = await prisma.user({username});
-      user["posts"] = await prisma.user({username}).posts();
+      user["posts"] = await prisma
+        .user({username})
+        .posts({orderBy: "createdAt_DESC"});
       return user;
     },
   },
