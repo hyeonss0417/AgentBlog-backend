@@ -6,8 +6,9 @@ export default {
       checkIfAuthenticated(request);
       const {user} = request;
       const userProfile = await prisma.user({id: user.id});
-      userProfile["posts"] = await prisma.user({id: user.id}).posts();
-      //console.log(userProfile);
+      userProfile["posts"] = await prisma
+        .user({id: user.id})
+        .posts({orderBy: "createdAt_DESC"});
       return userProfile;
     },
   },
