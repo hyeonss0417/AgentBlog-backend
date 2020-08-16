@@ -101,5 +101,7 @@ export const sanitizeContent = (content) => {
 
 export const getThumbnailFromContent = (content) => {
   const imageRegex = /!\[([^\[\]]*?)\]\((\S*?)\)/g;
-  return imageRegex.exec(content)[2];
+  const result = imageRegex.exec(content);
+  if (result === null) return null;
+  else return result[2];
 };

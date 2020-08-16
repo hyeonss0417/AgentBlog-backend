@@ -1,5 +1,10 @@
 import {prisma} from "../../../../generated/prisma-client";
-import {addHashtag, getUniqueUrl, sanitizeContent} from "../../../utils";
+import {
+  addHashtag,
+  getUniqueUrl,
+  sanitizeContent,
+  getThumbnailFromContent,
+} from "../../../utils";
 
 const EDIT = "EDIT";
 const DELETE = "DELETE";
