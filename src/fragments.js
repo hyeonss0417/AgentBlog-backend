@@ -19,6 +19,7 @@ export const USER_FRAGMENT = `
     }
 `;
 
+// This is for General User Info.
 export const _USER_FRAGMENT = `
         id
         username
