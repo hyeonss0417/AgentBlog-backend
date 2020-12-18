@@ -14,7 +14,7 @@
     "aws-sdk": "^2.691.0",
     "copy": "^0.3.2",
     "cors": "^2.8.5",
-    "dompurify": "^2.0.12",
+    "dompurify": "^2.0.17",
     "dotenv": "^8.2.0",
     "graphql-tools": "^4.0.7",
     "graphql-yoga": "^1.18.3",
