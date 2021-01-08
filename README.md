@@ -100,3 +100,96 @@
 - **[passport]()**: 토큰인증방식을 위해 사용.
 - **[morgan]()**: 서버 요청에 대한 기록을 콘솔에 저장하기 위해 사용.
 
+
+## File Setting
+```
+📦src
+ ┣ 📂api
+ ┃ ┣ 📂Comment
+ ┃ ┃ ┣ 📂addComment
+ ┃ ┃ ┃ ┣ 📜addComment.graphql
+ ┃ ┃ ┃ ┗ 📜addComment.js
+ ┃ ┃ ┗ 📂editComment
+ ┃ ┣ 📂Hashtag
+ ┃ ┃ ┣ 📂getPopularHashtag
+ ┃ ┃ ┃ ┣ 📜getPopularHashtag.graphql
+ ┃ ┃ ┃ ┗ 📜getPopularHashtag.js
+ ┃ ┃ ┣ 📂searchHashtag
+ ┃ ┃ ┃ ┣ 📜searchHashtag.graphql
+ ┃ ┃ ┃ ┗ 📜searchHashtag.js
+ ┃ ┃ ┗ 📜Hashtag.js
+ ┃ ┣ 📂Like
+ ┃ ┃ ┣ 📂toggleLike
+ ┃ ┃ ┃ ┣ 📜toggleLike.graphql
+ ┃ ┃ ┃ ┗ 📜toggleLike.js
+ ┃ ┃ ┗ 📜.DS_Store
+ ┃ ┣ 📂Post
+ ┃ ┃ ┣ 📂editPost
+ ┃ ┃ ┃ ┣ 📜editPost.graphql
+ ┃ ┃ ┃ ┗ 📜editPost.js
+ ┃ ┃ ┣ 📂getPostDetail
+ ┃ ┃ ┃ ┣ 📜getPostDetail.graphql
+ ┃ ┃ ┃ ┗ 📜getPostDetail.js
+ ┃ ┃ ┣ 📂posting
+ ┃ ┃ ┃ ┣ 📜posting.graphql
+ ┃ ┃ ┃ ┗ 📜posting.js
+ ┃ ┃ ┣ 📂searchPost
+ ┃ ┃ ┃ ┣ 📜searchPost.graphql
+ ┃ ┃ ┃ ┗ 📜searchPost.js
+ ┃ ┃ ┣ 📂seeLatestPost
+ ┃ ┃ ┃ ┣ 📜seeLatestPost.graphql
+ ┃ ┃ ┃ ┗ 📜seeLatestPost.js
+ ┃ ┃ ┣ 📂seeTrendyPost
+ ┃ ┃ ┃ ┣ 📜seeTrendyPost.graphql
+ ┃ ┃ ┃ ┗ 📜seeTrendyPost.js
+ ┃ ┃ ┗ 📜Post.js
+ ┃ ┣ 📂Series
+ ┃ ┃ ┣ 📂addSeries
+ ┃ ┃ ┃ ┣ 📜addSeries.graphql
+ ┃ ┃ ┃ ┗ 📜addSeries.js
+ ┃ ┃ ┣ 📂editSeries
+ ┃ ┃ ┃ ┣ 📜editSeries.graphql
+ ┃ ┃ ┃ ┗ 📜editSeries.js
+ ┃ ┃ ┗ 📂getSeries
+ ┃ ┃ ┃ ┣ 📜getSeries.graphql
+ ┃ ┃ ┃ ┗ 📜getSeries.js
+ ┃ ┣ 📂User
+ ┃ ┃ ┣ 📂_searchUser
+ ┃ ┃ ┃ ┣ 📜searchUser.graphql
+ ┃ ┃ ┃ ┗ 📜searchUser.js
+ ┃ ┃ ┣ 📂checkToken
+ ┃ ┃ ┃ ┣ 📜checkToken.graphql
+ ┃ ┃ ┃ ┗ 📜checkToken.js
+ ┃ ┃ ┣ 📂confirmSecret
+ ┃ ┃ ┃ ┣ 📜confirmSecret.graphql
+ ┃ ┃ ┃ ┗ 📜confirmSecret.js
+ ┃ ┃ ┣ 📂createAccount
+ ┃ ┃ ┃ ┣ 📜createAccount.graphql
+ ┃ ┃ ┃ ┗ 📜createAccount.js
+ ┃ ┃ ┣ 📂edituser
+ ┃ ┃ ┃ ┣ 📜edituser.graphql
+ ┃ ┃ ┃ ┗ 📜edituser.js
+ ┃ ┃ ┣ 📂me
+ ┃ ┃ ┃ ┣ 📜me.graphql
+ ┃ ┃ ┃ ┗ 📜me.js
+ ┃ ┃ ┣ 📂requestSecret
+ ┃ ┃ ┃ ┣ 📜requestSecret.graphql
+ ┃ ┃ ┃ ┗ 📜requestSecret.js
+ ┃ ┃ ┣ 📂seeUserPosts
+ ┃ ┃ ┃ ┣ 📜seeUserPosts.graphql
+ ┃ ┃ ┃ ┗ 📜seeUserPosts.js
+ ┃ ┃ ┣ 📜.DS_Store
+ ┃ ┃ ┗ 📜User.js
+ ┃ ┣ 📜.DS_Store
+ ┃ ┗ 📜models.graphql
+ ┣ 📜.DS_Store
+ ┣ 📜env.js
+ ┣ 📜fragments.js
+ ┣ 📜middleware.js
+ ┣ 📜passport.js
+ ┣ 📜schema.js
+ ┣ 📜server.js
+ ┣ 📜upload.js
+ ┗ 📜utils.js
+```
+
