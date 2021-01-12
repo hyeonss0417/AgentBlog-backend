@@ -122,7 +122,6 @@
  ┃ ┃ ┣ 📂toggleLike
  ┃ ┃ ┃ ┣ 📜toggleLike.graphql
  ┃ ┃ ┃ ┗ 📜toggleLike.js
- ┃ ┃ ┗ 📜.DS_Store
  ┃ ┣ 📂Post
  ┃ ┃ ┣ 📂editPost
  ┃ ┃ ┃ ┣ 📜editPost.graphql
@@ -178,11 +177,8 @@
  ┃ ┃ ┣ 📂seeUserPosts
  ┃ ┃ ┃ ┣ 📜seeUserPosts.graphql
  ┃ ┃ ┃ ┗ 📜seeUserPosts.js
- ┃ ┃ ┣ 📜.DS_Store
  ┃ ┃ ┗ 📜User.js
- ┃ ┣ 📜.DS_Store
  ┃ ┗ 📜models.graphql
- ┣ 📜.DS_Store
  ┣ 📜env.js
  ┣ 📜fragments.js
  ┣ 📜middleware.js
