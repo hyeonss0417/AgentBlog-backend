@@ -7,6 +7,7 @@ export default {
       const {email} = args;
       const exist = await prisma.$exists.user({email});
       if (!exist) {
+        console.log("No user");
         return false;
       }
       const loginSecret = generateSecret();
