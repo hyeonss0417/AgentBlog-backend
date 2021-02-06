@@ -17,8 +17,7 @@ export const generateSecret = () => {
 export const sendMail = (email) => {
   const options = {
     auth: {
-      api_user: process.env.SENDGRID_USERNAME,
-      api_key: process.env.SENDGIRD_PASSWORD,
+      api_key: process.env.SENDGRID_APIKEY,
     },
   };
   const client = nodemailer.createTransport(sgTransport(options));
