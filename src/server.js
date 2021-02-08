@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 4000;
 
 const server = new GraphQLServer({
   schema,
-  context: ({request}) => ({request, checkIfAuthenticated}),
+  context: ({request, response}) => ({request, response, checkIfAuthenticated}),
 });
 
 const corsOptions = {
@@ -22,7 +22,6 @@ const corsOptions = {
 
 server.express.use(logger("dev"));
 server.express.use(authenticateJwt);
-//server.express.use(cors());
 server.express.use(cors({corsOptions}));
 server.express.post("/api/upload", uploadController);
 

@@ -34,7 +34,11 @@ export const sendSecretMail = (address, secret) => {
   return sendMail(email);
 };
 
-export const generateToken = (id) => jwt.sign({id}, process.env.JWT_SECRET);
+export const generateToken = (id) =>
+  jwt.sign({id}, process.env.JWT_SECRET, {expiresIn: "15m"});
+
+export const generateRefreshToken = (id) =>
+  jwt.sign({id}, process.env.JWT_SECRET, {expiresIn: "14d"});
 
 export const getUniqueUrl = async (username, url) => {
   let uniqueUrl = url

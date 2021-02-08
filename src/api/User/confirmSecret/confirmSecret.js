@@ -1,15 +1,22 @@
 import {prisma} from "../../../../generated/prisma-client";
-import {generateToken} from "../../../utils";
+import {generateToken, generateRefreshToken} from "../../../utils";
 
 export default {
   Mutation: {
-    confirmSecret: async (_, args) => {
+    confirmSecret: async (_, args, {response}) => {
       const {secret, email} = args;
       const user = await prisma.user({email});
       if (user.loginSecret === secret) {
         await prisma.updateUser({
           where: {id: user.id},
           data: {loginSecret: ""},
+        });
+
+        const refreshToken = generateRefreshToken(user.id);
+        response.cookie("refresh_token", refreshToken, {
+          expires: new Date(Date.now() + 14 * 24 * 60 * 1000), // 2 weeks
+          secure: true,
+          httpOnly: true,
         });
         return generateToken(user.id);
       } else {
