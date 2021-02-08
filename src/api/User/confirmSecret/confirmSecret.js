@@ -13,13 +13,12 @@ export default {
         });
 
         const refreshToken = generateRefreshToken(user.id);
-        console.log(refreshToken);
+        //console.log(refreshToken);
         response.cookie("refresh_token", refreshToken, {
-          expires: new Date(Date.now() + 14 * 24 * 60 * 1000), // 2 weeks
+          expires: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000), // 2 weeks
           secure: true,
           httpOnly: true,
         });
-        console.log(response);
         return generateToken(user.id);
       } else {
         //throw Error("Wrong secret key!");
