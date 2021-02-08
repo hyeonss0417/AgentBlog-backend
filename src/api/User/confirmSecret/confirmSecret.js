@@ -15,6 +15,7 @@ export default {
         const refreshToken = generateRefreshToken(user.id);
         //console.log(refreshToken);
         response.cookie("refresh_token", refreshToken, {
+          //domain: '',
           expires: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000), // 2 weeks
           secure: true,
           httpOnly: true,

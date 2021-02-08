@@ -23,7 +23,7 @@ const corsOptions = {
 
 server.express.use(logger("dev"));
 server.express.use(authenticateJwt);
-server.express.use(cors({corsOptions}));
+server.express.use(cors(corsOptions));
 server.express.use(cookieParser());
 server.express.post("/api/upload", uploadController);
 
