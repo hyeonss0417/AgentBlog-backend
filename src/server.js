@@ -16,14 +16,14 @@ const server = new GraphQLServer({
 });
 
 const corsOptions = {
-  origin: "uri of front-end",
+  origin: ["https://agent-blog-frontend.herokuapp.com/", "http://52.78.67.10/"],
   credentials: true,
 };
 
 server.express.use(logger("dev"));
 server.express.use(authenticateJwt);
-server.express.use(cors());
-//server.express.use(cors({corsOptions}));
+//server.express.use(cors());
+server.express.use(cors({corsOptions}));
 server.express.post("/api/upload", uploadController);
 
 server.start({port: PORT}, () =>
