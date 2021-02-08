@@ -17,7 +17,7 @@ const server = new GraphQLServer({
 });
 
 const corsOptions = {
-  origin: ["https://agent-blog-frontend.herokuapp.com/", "http://52.78.67.10/"],
+  origin: "http://52.78.67.10",
   credentials: true,
 };
 
