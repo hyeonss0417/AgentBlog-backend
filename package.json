@@ -12,6 +12,7 @@
     "@babel/preset-env": "^7.9.6",
     "@babel/runtime": "^7.10.1",
     "aws-sdk": "^2.691.0",
+    "cookie-parser": "^1.4.5",
     "copy": "^0.3.2",
     "cors": "^2.8.5",
     "dompurify": "^2.0.12",
