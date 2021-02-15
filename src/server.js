@@ -1,7 +1,8 @@
 import "./env";
 import logger from "morgan";
 import schema from "./schema";
-import "./passport";
+import passportConfig from "./passport";
+import passport from "passport";
 import {authenticateJwt} from "./passport";
 import {checkIfAuthenticated} from "./middleware";
 import {uploadController} from "./upload";
@@ -22,6 +23,8 @@ const aserver = new ApolloServer({
 });
 
 app.use(logger("dev"));
+app.use(passport.initialize());
+passportConfig();
 app.use(authenticateJwt);
 app.use(cookieParser());
 app.post("/api/upload", uploadController);
