@@ -14,7 +14,11 @@ const app = express();
 
 const aserver = new ApolloServer({
   schema,
-  context: ({request, response}) => ({request, response, checkIfAuthenticated}),
+  context: ({req, res}) => ({
+    request: req,
+    response: res,
+    checkIfAuthenticated,
+  }),
 });
 
 app.use(logger("dev"));
