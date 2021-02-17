@@ -90,7 +90,6 @@
 - Input 값의 변화를 실시간으로 감지하여 입력 즉시 검색 데이터를 받아옴
 
 
-
 ## 활용기술
 - **[GraphQL]()**: 웹 클라이언트가 데이터를 서버로 부터 효율적으로 가져오는 것을 목적으로 만들어진 쿼리 언어로서 하나의 엔드 포인트를 통해 원하는 데이터를 한번에 가져올 수 있는 장점이 있습니다.
 - **[heroku]()**: GraphQL API 서버와 Prisma-MySQL Database 배포하기 위해 사용.
@@ -100,4 +99,93 @@
 - **[nodemailer]()**: Node.js 에서 e-mail 을 쉽게 보낼 수 있게 도와주는 모듈. 회원가입 시 이메일 인증을 위해 사용.
 - **[passport]()**: 토큰인증방식을 위해 사용.
 - **[morgan]()**: 서버 요청에 대한 기록을 콘솔에 저장하기 위해 사용.
+
+
+## File Setting
+```
+📦src
+ ┣ 📂api
+ ┃ ┣ 📂Comment
+ ┃ ┃ ┣ 📂addComment
+ ┃ ┃ ┃ ┣ 📜addComment.graphql
+ ┃ ┃ ┃ ┗ 📜addComment.js
+ ┃ ┃ ┗ 📂editComment
+ ┃ ┣ 📂Hashtag
+ ┃ ┃ ┣ 📂getPopularHashtag
+ ┃ ┃ ┃ ┣ 📜getPopularHashtag.graphql
+ ┃ ┃ ┃ ┗ 📜getPopularHashtag.js
+ ┃ ┃ ┣ 📂searchHashtag
+ ┃ ┃ ┃ ┣ 📜searchHashtag.graphql
+ ┃ ┃ ┃ ┗ 📜searchHashtag.js
+ ┃ ┃ ┗ 📜Hashtag.js
+ ┃ ┣ 📂Like
+ ┃ ┃ ┣ 📂toggleLike
+ ┃ ┃ ┃ ┣ 📜toggleLike.graphql
+ ┃ ┃ ┃ ┗ 📜toggleLike.js
+ ┃ ┣ 📂Post
+ ┃ ┃ ┣ 📂editPost
+ ┃ ┃ ┃ ┣ 📜editPost.graphql
+ ┃ ┃ ┃ ┗ 📜editPost.js
+ ┃ ┃ ┣ 📂getPostDetail
+ ┃ ┃ ┃ ┣ 📜getPostDetail.graphql
+ ┃ ┃ ┃ ┗ 📜getPostDetail.js
+ ┃ ┃ ┣ 📂posting
+ ┃ ┃ ┃ ┣ 📜posting.graphql
+ ┃ ┃ ┃ ┗ 📜posting.js
+ ┃ ┃ ┣ 📂searchPost
+ ┃ ┃ ┃ ┣ 📜searchPost.graphql
+ ┃ ┃ ┃ ┗ 📜searchPost.js
+ ┃ ┃ ┣ 📂seeLatestPost
+ ┃ ┃ ┃ ┣ 📜seeLatestPost.graphql
+ ┃ ┃ ┃ ┗ 📜seeLatestPost.js
+ ┃ ┃ ┣ 📂seeTrendyPost
+ ┃ ┃ ┃ ┣ 📜seeTrendyPost.graphql
+ ┃ ┃ ┃ ┗ 📜seeTrendyPost.js
+ ┃ ┃ ┗ 📜Post.js
+ ┃ ┣ 📂Series
+ ┃ ┃ ┣ 📂addSeries
+ ┃ ┃ ┃ ┣ 📜addSeries.graphql
+ ┃ ┃ ┃ ┗ 📜addSeries.js
+ ┃ ┃ ┣ 📂editSeries
+ ┃ ┃ ┃ ┣ 📜editSeries.graphql
+ ┃ ┃ ┃ ┗ 📜editSeries.js
+ ┃ ┃ ┗ 📂getSeries
+ ┃ ┃ ┃ ┣ 📜getSeries.graphql
+ ┃ ┃ ┃ ┗ 📜getSeries.js
+ ┃ ┣ 📂User
+ ┃ ┃ ┣ 📂_searchUser
+ ┃ ┃ ┃ ┣ 📜searchUser.graphql
+ ┃ ┃ ┃ ┗ 📜searchUser.js
+ ┃ ┃ ┣ 📂checkToken
+ ┃ ┃ ┃ ┣ 📜checkToken.graphql
+ ┃ ┃ ┃ ┗ 📜checkToken.js
+ ┃ ┃ ┣ 📂confirmSecret
+ ┃ ┃ ┃ ┣ 📜confirmSecret.graphql
+ ┃ ┃ ┃ ┗ 📜confirmSecret.js
+ ┃ ┃ ┣ 📂createAccount
+ ┃ ┃ ┃ ┣ 📜createAccount.graphql
+ ┃ ┃ ┃ ┗ 📜createAccount.js
+ ┃ ┃ ┣ 📂edituser
+ ┃ ┃ ┃ ┣ 📜edituser.graphql
+ ┃ ┃ ┃ ┗ 📜edituser.js
+ ┃ ┃ ┣ 📂me
+ ┃ ┃ ┃ ┣ 📜me.graphql
+ ┃ ┃ ┃ ┗ 📜me.js
+ ┃ ┃ ┣ 📂requestSecret
+ ┃ ┃ ┃ ┣ 📜requestSecret.graphql
+ ┃ ┃ ┃ ┗ 📜requestSecret.js
+ ┃ ┃ ┣ 📂seeUserPosts
+ ┃ ┃ ┃ ┣ 📜seeUserPosts.graphql
+ ┃ ┃ ┃ ┗ 📜seeUserPosts.js
+ ┃ ┃ ┗ 📜User.js
+ ┃ ┗ 📜models.graphql
+ ┣ 📜env.js
+ ┣ 📜fragments.js
+ ┣ 📜middleware.js
+ ┣ 📜passport.js
+ ┣ 📜schema.js
+ ┣ 📜server.js
+ ┣ 📜upload.js
+ ┗ 📜utils.js
+```
 
