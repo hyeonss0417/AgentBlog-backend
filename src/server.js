@@ -43,6 +43,7 @@ aserver.applyMiddleware({
       "https://agent-blog-frontend.herokuapp.com",
       "http://52.78.67.10",
       "http://localhost:3000",
+      "http://localhost:5000",
     ],
   },
 });
