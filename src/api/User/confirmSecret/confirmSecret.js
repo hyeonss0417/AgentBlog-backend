@@ -14,13 +14,13 @@ export default {
 
         const refreshToken = generateRefreshToken(user.id);
         console.log("refreshToken");
-        //console.log(response);
         response.cookie("refresh_token", refreshToken, {
           //domain: '',
           expires: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000), // 2 weeks
           // secure: true,
           httpOnly: true,
         });
+        console.log(response);
         console.log(refreshToken);
         return generateToken(user.id);
       } else {
